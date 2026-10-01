@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMH Coliving · Tu hogar en el corazón cultural de Cali</title>
+<meta name="description" content="Habitaciones privadas en una hermosa casa colonial junto al Río Cali. Bienestar, comunidad y la mejor ubicación de Cali. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Mulish:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="IMH Coliving">
+      <span class="brand-mark">I</span>
+      <span><span class="brand-name">IMH Coliving</span><span class="brand-sub">Cali · Colombia</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#espacios">Espacios</a>
+      <a href="#bienestar">Bienestar</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#resenas">Reseñas</a>
+    </nav>
+    <div class="nav-cta">
+      <button class="btn btn-wa btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me gustaría reservar una estadía. ¿Me ayudan con la disponibilidad y tarifas?">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5-.1-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+        Reservar
+      </button>
+      <button class="nav-toggle" data-drawer-open aria-label="Menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer">
+  <div class="drawer-top">
+    <span class="brand"><span class="brand-mark">I</span><span class="brand-name">IMH Coliving</span></span>
+    <button class="drawer-close" data-drawer-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <a href="#habitaciones">Habitaciones</a>
+  <a href="#espacios">Espacios</a>
+  <a href="#bienestar">Bienestar</a>
+  <a href="#ubicacion">Ubicación</a>
+  <a href="#resenas">Reseñas</a>
+  <a href="#galeria">Galería</a>
+  <button class="btn btn-wa btn-block" data-wa="¡Hola IMH Coliving! 👋 Me gustaría reservar una estadía. ¿Me ayudan con la disponibilidad?">Reservar por WhatsApp</button>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-media"><div class="imgslot" data-gallery="hero"></div></div>
+  <div class="hero-inner">
+    <span class="eyebrow reveal">Coliving · Barrio Santa Rita</span>
+    <h1 class="reveal d1">Tu hogar en el corazón cultural de Cali</h1>
+    <p class="sub reveal d2">Habitaciones privadas en una hermosa casa colonial, a pasos del Río Cali, San Antonio y los lugares más emblemáticos de la ciudad.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#habitaciones" class="btn btn-ghost">Ver habitaciones</a>
+    </div>
+
+    <!-- Booking widget -->
+    <form class="booking reveal d3" id="booking">
+      <div class="bk-field">
+        <label for="bk-in">Llegada</label>
+        <input type="date" id="bk-in" required>
+      </div>
+      <div class="bk-field">
+        <label for="bk-out">Salida</label>
+        <input type="date" id="bk-out" required>
+      </div>
+      <div class="bk-field">
+        <label for="bk-guests">Huéspedes</label>
+        <select id="bk-guests">
+          <option>1 huésped</option>
+          <option>2 huéspedes</option>
+          <option>3 huéspedes</option>
+          <option>4 huéspedes</option>
+          <option>5+ huéspedes</option>
+        </select>
+      </div>
+      <div class="bk-field bk-go">
+        <button type="submit" class="btn btn-wa btn-block">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          Buscar
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Desliza<span></span></div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-item"><span class="trust-logo">Google</span><span class="stars">★★★★★</span> 4.9</div>
+    <span class="trust-sep"></span>
+    <div class="trust-item"><span class="trust-logo">Airbnb</span> Superhost</div>
+    <span class="trust-sep"></span>
+    <div class="trust-item"><span class="trust-logo">Booking</span> 9.2</div>
+    <span class="trust-sep"></span>
+    <div class="trust-item">Basado en huéspedes reales</div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA ============ -->
+<section class="sec" id="experiencia">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">La experiencia IMH</span>
+      <h2 class="reveal d1">Más que un lugar para dormir</h2>
+      <p class="lead reveal d2">Un oasis tranquilo diseñado para nómadas digitales, viajeros conscientes y estadías largas en Cali.</p>
+    </div>
+    <div class="exp-grid">
+      <article class="exp-card reveal">
+        <div class="exp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></div>
+        <h3>Descansa</h3>
+        <p>Habitaciones privadas con baño privado, ropa de cama premium y silencio real.</p>
+      </article>
+      <article class="exp-card reveal d1">
+        <div class="exp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.3"/><path d="M3.5 19a5.5 5.5 0 0111 0M15 19a4 4 0 015.5-3.7"/></svg></div>
+        <h3>Conecta</h3>
+        <p>Espacios comunes cuidadosamente diseñados para compartir y crear comunidad.</p>
+      </article>
+      <article class="exp-card reveal d2">
+        <div class="exp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-7-6-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 4-3 7-7 10z"/><path d="M12 8v13"/></svg></div>
+        <h3>Respira</h3>
+        <p>Clases de yoga, respiración y movimiento en nuestro hermoso salón de bienestar.</p>
+      </article>
+      <article class="exp-card reveal d3">
+        <div class="exp-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z"/></svg></div>
+        <h3>Explora</h3>
+        <p>Ubicación estratégica en la zona turística y cultural de Cali, todo a pie.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HABITACIONES ============ -->
+<section class="sec rooms" id="habitaciones">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">Nuestras habitaciones</span>
+      <h2 class="reveal d1">Cinco espacios, cinco rincones de Cali</h2>
+      <p class="lead reveal d2">Cada habitación lleva el nombre de un lugar emblemático de la ciudad. Toca una foto para recorrerla.</p>
+    </div>
+    <div class="rooms-grid">
+
+      <!-- Santa Rita -->
+      <article class="room reveal">
+        <div class="room-media" data-open-gallery="santarita">
+          <span class="room-badge">Doble</span>
+          <span class="room-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg> Ver fotos</span>
+          <div class="imgslot" data-gallery="santarita"></div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Santa Rita</h3>
+          <span class="room-loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Inspirada en el barrio colonial</span>
+          <p class="room-desc">Acogedora habitación privada con escritorio, ideal para estadías de trabajo y descanso.</p>
+          <div class="room-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12v6M21 12v6M3 14h18"/></svg> 1 cama doble</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-10z"/></svg> Baño privado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0M8.5 15.5a3.5 3.5 0 017 0M12 18.5h.01"/></svg> Wi‑Fi</span>
+          </div>
+        </div>
+        <div class="room-foot">
+          <div class="room-price"><small>Desde</small><b>$69.000<span> COP/noche</span></b></div>
+        </div>
+        <div class="room-actions">
+          <button class="btn btn-wa btn-block btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me interesa reservar la *Habitación Santa Rita* (Doble · 1 cama doble). ¿Disponibilidad y tarifas?">Reservar por WhatsApp</button>
+          <button class="btn btn-outline btn-block btn-sm" data-open-gallery="santarita">Ver fotos</button>
+        </div>
+      </article>
+
+      <!-- Río Cali -->
+      <article class="room reveal d1">
+        <div class="room-media" data-open-gallery="riocali">
+          <span class="room-badge">Doble Superior</span>
+          <span class="room-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg> Ver fotos</span>
+          <div class="imgslot" data-gallery="riocali"></div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Río Cali</h3>
+          <span class="room-loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> A pasos del río y La Tertulia</span>
+          <p class="room-desc">Luminosa habitación con aire acondicionado y balcón privado sobre el patio.</p>
+          <div class="room-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12v6M21 12v6M3 14h18"/></svg> 1 cama doble</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-10z"/></svg> Baño privado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 18v-3a8 8 0 0116 0v3M2 18h20"/><circle cx="12" cy="7" r="1"/></svg> Balcón</span>
+          </div>
+        </div>
+        <div class="room-foot">
+          <div class="room-price"><small>Desde</small><b>$79.000<span> COP/noche</span></b></div>
+        </div>
+        <div class="room-actions">
+          <button class="btn btn-wa btn-block btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me interesa reservar la *Habitación Río Cali* (Doble Superior con balcón). ¿Disponibilidad y tarifas?">Reservar por WhatsApp</button>
+          <button class="btn btn-outline btn-block btn-sm" data-open-gallery="riocali">Ver fotos</button>
+        </div>
+      </article>
+
+      <!-- Aguacatal -->
+      <article class="room reveal d2">
+        <div class="room-media" data-open-gallery="aguacatal">
+          <span class="room-badge">Familiar</span>
+          <span class="room-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg> Ver fotos</span>
+          <div class="imgslot" data-gallery="aguacatal"></div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Aguacatal</h3>
+          <span class="room-loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Amplia y luminosa</span>
+          <p class="room-desc">Habitación familiar con espacio de sobra para grupos o familias que viajan juntos.</p>
+          <div class="room-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12v6M21 12v6M3 14h18"/></svg> 2 camas dobles</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-10z"/></svg> Baño privado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.3"/><path d="M4 18a5 5 0 0110 0M14 18a4 4 0 016 0"/></svg> Hasta 4</span>
+          </div>
+        </div>
+        <div class="room-foot">
+          <div class="room-price"><small>Desde</small><b>$99.000<span> COP/noche</span></b></div>
+        </div>
+        <div class="room-actions">
+          <button class="btn btn-wa btn-block btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me interesa reservar la *Habitación Aguacatal* (Familiar · 2 camas dobles). ¿Disponibilidad y tarifas?">Reservar por WhatsApp</button>
+          <button class="btn btn-outline btn-block btn-sm" data-open-gallery="aguacatal">Ver fotos</button>
+        </div>
+      </article>
+
+      <!-- El Peñón -->
+      <article class="room reveal">
+        <div class="room-media" data-open-gallery="penon">
+          <span class="room-badge">Privada</span>
+          <span class="room-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg> Ver fotos</span>
+          <div class="imgslot" data-gallery="penon"></div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">El Peñón</h3>
+          <span class="room-loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Tranquila y privada</span>
+          <p class="room-desc">Habitación íntima con detalles cálidos de madera y mucha luz natural.</p>
+          <div class="room-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12v6M21 12v6M3 14h18"/></svg> 1 cama doble</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-10z"/></svg> Baño privado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0M8.5 15.5a3.5 3.5 0 017 0M12 18.5h.01"/></svg> Wi‑Fi</span>
+          </div>
+        </div>
+        <div class="room-foot">
+          <div class="room-price"><small>Desde</small><b>$75.000<span> COP/noche</span></b></div>
+        </div>
+        <div class="room-actions">
+          <button class="btn btn-wa btn-block btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me interesa reservar la *Habitación El Peñón* (Privada · 1 cama doble). ¿Disponibilidad y tarifas?">Reservar por WhatsApp</button>
+          <button class="btn btn-outline btn-block btn-sm" data-open-gallery="penon">Ver fotos</button>
+        </div>
+      </article>
+
+      <!-- Farallones -->
+      <article class="room reveal d1">
+        <div class="room-media" data-open-gallery="farallones">
+          <span class="room-badge">Grupal</span>
+          <span class="room-count"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-5 4 4 3-3 6 6"/></svg> Ver fotos</span>
+          <div class="imgslot" data-gallery="farallones"></div>
+        </div>
+        <div class="room-body">
+          <h3 class="room-name">Farallones</h3>
+          <span class="room-loc"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Perfecta para grupos</span>
+          <p class="room-desc">Nuestra habitación más amplia, con tres camas dobles y aire acondicionado.</p>
+          <div class="room-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v5M3 12v6M21 12v6M3 14h18"/></svg> 3 camas dobles</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3C9 6 6 9 6 13a6 6 0 0012 0c0-4-3-7-6-10z"/></svg> Baño privado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.3"/><path d="M4 18a5 5 0 0110 0M14 18a4 4 0 016 0"/></svg> Hasta 6</span>
+          </div>
+        </div>
+        <div class="room-foot">
+          <div class="room-price"><small>Desde</small><b>$129.000<span> COP/noche</span></b></div>
+        </div>
+        <div class="room-actions">
+          <button class="btn btn-wa btn-block btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me interesa reservar la *Habitación Farallones* (Grupal · 3 camas dobles). ¿Disponibilidad y tarifas?">Reservar por WhatsApp</button>
+          <button class="btn btn-outline btn-block btn-sm" data-open-gallery="farallones">Ver fotos</button>
+        </div>
+      </article>
+
+      <!-- CTA card -->
+      <article class="room reveal d2" style="background:var(--azul);color:#fff;justify-content:center;align-items:center;text-align:center;padding:40px 30px">
+        <h3 class="room-name" style="color:#fff;font-size:2rem">¿No sabes cuál elegir?</h3>
+        <p style="color:rgba(255,255,255,.85);margin:14px 0 24px">Cuéntanos cuántos viajan y por cuánto tiempo. Te ayudamos a encontrar tu rincón ideal en Cali.</p>
+        <button class="btn btn-ghost btn-block" data-wa="¡Hola IMH Coliving! 👋 Quiero ayuda para elegir habitación. Viajamos ___ personas, del ___ al ___.">Hablar con nosotros</button>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESPACIOS COMPARTIDOS ============ -->
+<section class="sec" id="espacios">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">La casa</span>
+      <h2 class="reveal d1">Espacios compartidos para vivir Cali</h2>
+      <p class="lead reveal d2">Una casa colonial restaurada con rincones pensados para descansar, cocinar, trabajar y compartir.</p>
+    </div>
+    <div class="spaces-grid">
+      <div class="space s-big reveal" data-open-gallery="sala">
+        <div class="imgslot" data-gallery="sala"></div>
+        <div class="space-cap"><h3>Sala &amp; zonas comunes</h3><p>Pisos de madera, luz natural y rincones para conversar.</p></div>
+      </div>
+      <div class="space s-tall reveal d1" data-open-gallery="hamacas">
+        <div class="imgslot" data-gallery="hamacas"></div>
+        <div class="space-cap"><h3>Zona de hamacas</h3><p>Tu lugar favorito para leer y desconectar.</p></div>
+      </div>
+      <div class="space s-third reveal" data-open-gallery="cocina">
+        <div class="imgslot" data-gallery="cocina"></div>
+        <div class="space-cap"><h3>Cocina equipada</h3><p>Cocina como en casa.</p></div>
+      </div>
+      <div class="space s-third reveal d1" data-open-gallery="bienestar">
+        <div class="imgslot" data-gallery="bienestar"></div>
+        <div class="space-cap"><h3>Salón de bienestar</h3><p>Yoga, respiración y movimiento.</p></div>
+      </div>
+      <div class="space s-third reveal d2" data-open-gallery="hero">
+        <div class="imgslot" data-gallery="hero"></div>
+        <div class="space-cap"><h3>Fachada colonial</h3><p>Arquitectura blanca y azul de Cali.</p></div>
+      </div>
+    </div>
+
+    <ul class="amen">
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12.5a7 7 0 0114 0M8.5 15.5a3.5 3.5 0 017 0M12 18.5h.01"/></svg></span> Wi‑Fi de alta velocidad</li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 18l3 3M21 18l-3 3"/></svg></span> Espacios de coworking</li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 11h16M6 11V7a2 2 0 012-2h2M14 11V5h4v6"/><circle cx="8" cy="16" r="2"/><circle cx="16" cy="16" r="2"/></svg></span> Cocina totalmente equipada</li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span> Check‑in 24h · cerradura inteligente</li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v6l9 4 9-4V7"/></svg></span> Lavandería disponible</li>
+      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 20v-6a8 8 0 0116 0v6"/><path d="M2 20h20M9 11h.01M15 11h.01"/></svg></span> Aire acondicionado</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ BIENESTAR ============ -->
+<section class="sec wellness" id="bienestar">
+  <div class="container wellness-grid">
+    <div class="reveal">
+      <span class="eyebrow">Más que alojamiento</span>
+      <h2>Un espacio para reconectar contigo</h2>
+      <p>En IMH el bienestar es parte del hogar. Accede a clases de yoga, respiración y movimiento en nuestro hermoso salón somático, con reserva previa.</p>
+      <div class="wkr">
+        <span>Yoga</span><span>Respiración</span><span>Movimiento</span><span>Meditación</span>
+      </div>
+      <button class="btn btn-wa" data-wa="¡Hola IMH Coliving! 👋 Quiero información sobre las clases de yoga, respiración y movimiento del salón de bienestar.">Reservar una clase</button>
+    </div>
+    <div class="wellness-media reveal d1">
+      <div class="imgslot" data-gallery="bienestar"></div>
+      <div class="badge-float">
+        <b>100%</b>
+        <small>Turismo consciente · estadías largas · comunidad nómada</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UBICACIÓN ============ -->
+<section class="sec" id="ubicacion">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">Ubicación privilegiada</span>
+      <h2 class="reveal d1">Todo lo mejor de Cali, a pocos minutos</h2>
+      <p class="lead reveal d2">En el barrio Santa Rita, junto al Río Cali y la zona cultural más vibrante de la ciudad.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="reveal">
+        <div class="loc-list">
+          <div class="loc-item"><div class="loc-time">2<small>MIN</small></div><div class="loc-name">Museo La Tertulia<small>Arte y cultura</small></div><span class="loc-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></span></div>
+          <div class="loc-item"><div class="loc-time">5<small>MIN</small></div><div class="loc-name">Boulevard del Río<small>Paseo junto al río</small></div><span class="loc-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></span></div>
+          <div class="loc-item"><div class="loc-time">6<small>MIN</small></div><div class="loc-name">San Antonio<small>Barrio histórico</small></div><span class="loc-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></span></div>
+          <div class="loc-item"><div class="loc-time">8<small>MIN</small></div><div class="loc-name">Zoológico de Cali<small>Naturaleza</small></div><span class="loc-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></span></div>
+          <div class="loc-item"><div class="loc-time">10<small>MIN</small></div><div class="loc-name">Jardín Botánico<small>Senderos verdes</small></div><span class="loc-pin"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg></span></div>
+        </div>
+      </div>
+      <div class="map-wrap reveal d1">
+        <span class="map-chip"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg> Barrio Santa Rita, Cali</span>
+        <iframe title="Mapa IMH Coliving" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-76.5535%2C3.4470%2C-76.5345%2C3.4605&amp;layer=mapnik&amp;marker=3.4537%2C-76.5440"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEÑAS ============ -->
+<section class="sec reviews" id="resenas">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">Lo que dicen los huéspedes</span>
+      <h2 class="reveal d1">Historias de quienes ya se sintieron en casa</h2>
+    </div>
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">“Excelente ubicación, muy tranquilo y cerca de todo. Volvería sin pensarlo.”</p>
+        <div class="rev-who"><span class="rev-av">M</span><div><b>María F.</b><small>Bogotá · Airbnb</small></div></div>
+      </article>
+      <article class="rev-card reveal d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">“El ambiente es increíble. Perfecto para trabajar y descansar al mismo tiempo.”</p>
+        <div class="rev-who"><span class="rev-av">D</span><div><b>Daniel R.</b><small>Medellín · Google</small></div></div>
+      </article>
+      <article class="rev-card reveal d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">“Las clases de yoga fueron un plus inesperado. Una experiencia muy completa.”</p>
+        <div class="rev-who"><span class="rev-av">S</span><div><b>Sophie L.</b><small>Francia · Booking</small></div></div>
+      </article>
+    </div>
+
+    <!-- Google widget -->
+    <div class="gwidget reveal d1">
+      <div class="gscore">
+        <b>4.9</b>
+        <span class="stars">★★★★★</span>
+        <small>+120 reseñas</small>
+      </div>
+      <div class="gmeta">
+        <div class="gtitle">
+          <svg class="gicon" viewBox="0 0 24 24"><path fill="#4285F4" d="M21.8 12.2c0-.66-.06-1.3-.17-1.9H12v3.6h5.5a4.7 4.7 0 01-2 3.1v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.7-2.4l-3.2-2.5c-.9.6-2 1-3.5 1-2.7 0-4.9-1.8-5.7-4.2H3v2.6A10 10 0 0012 22z"/><path fill="#FBBC05" d="M6.3 13.9a6 6 0 010-3.8V7.5H3a10 10 0 000 9z"/><path fill="#EA4335" d="M12 6.1c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 003 7.5l3.3 2.6C7.1 7.8 9.3 6.1 12 6.1z"/></svg>
+          Google Reviews
+        </div>
+        <p>Reseñas verificadas de huéspedes reales que se hospedaron en IMH Coliving.</p>
+        <button class="btn btn-outline btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me gustaría ver más reseñas antes de reservar.">Ver todas las reseñas</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="imgslot" data-gallery="ctafinal"></div>
+  <div class="container">
+    <span class="eyebrow center reveal">Te esperamos en Cali</span>
+    <h2 class="reveal d1">Tu próxima estadía en Cali comienza aquí</h2>
+    <p class="reveal d2">Reserva tu habitación por WhatsApp en minutos. Sin complicaciones, como hablar con un amigo.</p>
+    <div class="hero-actions reveal d3">
+      <button class="btn btn-wa" data-wa="¡Hola IMH Coliving! 👋 Quiero reservar mi estadía. ¿Me ayudan con la disponibilidad y tarifas?">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5-.1-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+        Reservar por WhatsApp
+      </button>
+      <a href="#habitaciones" class="btn btn-ghost">Ver habitaciones</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALERÍA INMERSIVA (al final) ============ -->
+<section class="sec" id="galeria">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow center reveal">Galería</span>
+      <h2 class="reveal d1">Un recorrido por la casa</h2>
+      <p class="lead reveal d2">Fachada, patios, habitaciones y rincones de bienestar.</p>
+    </div>
+    <div class="gallery reveal">
+      <div class="g-item" data-open-gallery="g1"><div class="imgslot" data-gallery="g1"></div></div>
+      <div class="g-item" data-open-gallery="g2"><div class="imgslot" data-gallery="g2"></div></div>
+      <div class="g-item" data-open-gallery="g3"><div class="imgslot" data-gallery="g3"></div></div>
+      <div class="g-item" data-open-gallery="g4"><div class="imgslot" data-gallery="g4"></div></div>
+      <div class="g-item" data-open-gallery="g5"><div class="imgslot" data-gallery="g5"></div></div>
+      <div class="g-item" data-open-gallery="g6"><div class="imgslot" data-gallery="g6"></div></div>
+      <div class="g-item" data-open-gallery="g7"><div class="imgslot" data-gallery="g7"></div></div>
+      <div class="g-item" data-open-gallery="g8"><div class="imgslot" data-gallery="g8"></div></div>
+      <div class="g-item" data-open-gallery="g9"><div class="imgslot" data-gallery="g9"></div></div>
+      <div class="g-item" data-open-gallery="g10"><div class="imgslot" data-gallery="g10"></div></div>
+      <div class="g-item" data-open-gallery="g11"><div class="imgslot" data-gallery="g11"></div></div>
+      <div class="g-item" data-open-gallery="g12"><div class="imgslot" data-gallery="g12"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <span class="brand"><span class="brand-mark">I</span><span class="brand-name">IMH Coliving</span></span>
+        <p>Tu hogar en el corazón cultural de Cali. Arquitectura colonial, bienestar y comunidad junto al Río Cali.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explorar</h4>
+        <a href="#habitaciones">Habitaciones</a>
+        <a href="#espacios">Espacios</a>
+        <a href="#bienestar">Bienestar</a>
+        <a href="#galeria">Galería</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>Barrio Santa Rita</li>
+          <li>Cali, Valle del Cauca</li>
+          <li>Colombia</li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Reserva</h4>
+        <a href="#" data-wa="¡Hola IMH Coliving! 👋 Quiero reservar una estadía.">WhatsApp</a>
+        <a href="#">Instagram</a>
+        <a href="#">Booking</a>
+        <a href="#">Airbnb</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> IMH Coliving · Cali, Colombia</span>
+      <span>Hecho con cariño para viajeros conscientes</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating WhatsApp -->
+<button class="wa-float wa-pulse" data-wa="¡Hola IMH Coliving! 👋 Me gustaría reservar una estadía. ¿Me ayudan con la disponibilidad y tarifas?" aria-label="Reservar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5-.1-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+  <span>Reservar por WhatsApp</span>
+</button>
+
+<script src="app.js"></script>
+</body>
+</html>

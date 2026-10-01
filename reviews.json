@@ -1,0 +1,50 @@
+{
+  "place_name": "IMH Coliving",
+  "place_id": "0x8e30a5667754dc03:0x93bad6746be5cded",
+  "google_maps_url": "https://www.google.com/maps/place/IMH+Coliving/@3.4530606,-76.550878,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a5667754dc03:0x93bad6746be5cded!8m2!3d3.4530606!4d-76.550878",
+  "rating": 4.9,
+  "total_reviews": 404,
+  "last_updated": "2026-08-02T14:00:00Z",
+  "reviews": [
+    {
+      "id": 1,
+      "author": "María F.",
+      "avatar": "M",
+      "rating": 5,
+      "date": "Hace 2 días",
+      "platform": "Google Maps",
+      "text": "Excelente ubicación en Santa Rita, muy tranquilo y cerca de todo. La atención de la casa es espectacular y el ambiente súper acogedor. ¡Volvería sin pensarlo!",
+      "verified": true
+    },
+    {
+      "id": 2,
+      "author": "Daniel R.",
+      "avatar": "D",
+      "rating": 5,
+      "date": "Hace 4 días",
+      "platform": "Google Maps",
+      "text": "El ambiente para trabajar remoto es increíble. Wi-Fi súper estable en todos los rincones y espacios tranquilos para concentrarse. Perfecto para nómadas.",
+      "verified": true
+    },
+    {
+      "id": 3,
+      "author": "Sophie L.",
+      "avatar": "S",
+      "rating": 5,
+      "date": "Hace 1 semana",
+      "platform": "Google Maps",
+      "text": "La casa neocolonial es hermosa y muy fresca. Las clases de yoga y bienestar en la mañana fueron un plus inesperado. Una experiencia súper completa en Cali.",
+      "verified": true
+    },
+    {
+      "id": 4,
+      "author": "Carlos M.",
+      "avatar": "C",
+      "rating": 5,
+      "date": "Hace 1 semana",
+      "platform": "Google Maps",
+      "text": "Ubicación insuperable junto al Río Cali. Puedes caminar a El Peñón, San Antonio y La Tertulia en minutos. Súper recomendado.",
+      "verified": true
+    }
+  ]
+}
