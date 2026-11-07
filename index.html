@@ -340,10 +340,11 @@
         <span>Pilates</span><span>Breathwork</span><span>Movimiento</span><span>Yoga</span><span>Método Feldenkrais</span>
       </div>
       <div class="wellness-actions">
-        <button class="btn btn-gold js-book" data-practice="Pilates">
+        <a class="btn btn-gold" href="https://cal.com/ikymotionhubmkt" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
           Reservar una clase
-        </button>
+        </a>
+        <button class="btn btn-ghost" data-wa="¡Hola IMH Coliving! 👋 Quiero información sobre las clases de yoga, breathwork, movimiento, Pilates y Feldenkrais.">Más información</button>
       </div>
     </div>
     <div class="wellness-media reveal d1">
@@ -441,25 +442,37 @@
       <span class="eyebrow center reveal">Lo que dicen los huéspedes</span>
       <h2 class="reveal d1">Historias de quienes ya se sintieron en casa</h2>
     </div>
-    <div class="rev-grid" id="reviews-grid">
-      <!-- Carga dinámica de reseñas de Google Maps -->
+    <div class="rev-grid">
+      <article class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Excelente ubicación, muy tranquilo y cerca de todo. Volvería sin pensarlo."</p>
+        <div class="rev-who"><span class="rev-av">M</span><div><b>María F.</b><small>Bogotá · Airbnb</small></div></div>
+      </article>
+      <article class="rev-card reveal d1">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"El ambiente es increíble. Perfecto para trabajar y descansar al mismo tiempo."</p>
+        <div class="rev-who"><span class="rev-av">D</span><div><b>Daniel R.</b><small>Medellín · Airbnb</small></div></div>
+      </article>
+      <article class="rev-card reveal d2">
+        <div class="rev-stars">★★★★★</div>
+        <p class="rev-text">"Las clases de yoga fueron un plus inesperado. Una experiencia muy completa."</p>
+        <div class="rev-who"><span class="rev-av">S</span><div><b>Sophie L.</b><small>Francia · Airbnb</small></div></div>
+      </article>
     </div>
 
     <div class="gwidget reveal d1">
       <div class="gscore">
         <b>4.9</b>
         <span class="stars">★★★★★</span>
-        <small>+404 reseñas verificadas</small>
+        <small>+404 reseñas</small>
       </div>
       <div class="gmeta">
         <div class="gtitle">
-          <svg class="gicon" viewBox="0 0 24 24" fill="none"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-          Ficha oficial de Google Maps
+          <svg class="gicon" viewBox="0 0 24 24" fill="#FF5A5F"><path d="M12 2c1.8 0 3.1 1.2 4.3 3.6.9 1.8 4.6 9.6 5.2 11.1.9 2.3-.5 4.7-3 4.9-1.5.1-2.9-.7-4-2-1.2 1.4-2.7 2.2-4.5 2.2s-3.3-.8-4.5-2.2c-1.1 1.3-2.5 2.1-4 2C2.2 21.4.8 19 1.7 16.7 2.3 15.2 6 7.4 6.9 5.6 8.1 3.2 9.4 2 11.2 2h.8z"/></svg>
+          Superhost en Airbnb
         </div>
-        <p>Reseñas reales y actualizadas periódicamente desde la ficha de IMH Coliving en Google.</p>
-        <a class="btn btn-outline btn-sm" href="https://www.google.com/maps/place/IMH+Coliving/@3.4530606,-76.550878,17z/data=!3m1!4b1!4m6!3m5!1s0x8e30a5667754dc03:0x93bad6746be5cded!8m2!3d3.4530606!4d-76.550878" target="_blank" rel="noopener">
-          Ver ficha en Google Maps
-        </a>
+        <p>Reseñas verificadas de huéspedes reales que se hospedaron en IMH Coliving.</p>
+        <button class="btn btn-outline btn-sm" data-wa="¡Hola IMH Coliving! 👋 Me gustaría ver más reseñas antes de reservar.">Ver todas las reseñas</button>
       </div>
     </div>
   </div>
@@ -518,7 +531,7 @@
       <article class="blog-card reveal d1" data-open-gallery="bienestar">
         <div class="blog-media">
           <span class="blog-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-7-6-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 4-3 7-7 10z"/></svg> Bienestar</span>
-          <img src="assets/bienestar/somatica.jpg" alt="Clase de bienestar en IMH" loading="lazy">
+          <img src="assets/bienestar/yoga-1.webp" alt="Clase de yoga en IMH" loading="lazy">
         </div>
         <div class="blog-body">
           <div class="blog-meta"><span>4 min de lectura</span><span class="dot"></span><span>Yoga</span></div>
@@ -710,115 +723,6 @@
   <span>Reservar por WhatsApp</span>
 </button>
 
-
-<!-- ===== ONBOARDING / RESERVA ===== -->
-<div class="ob" id="ob" role="dialog" aria-modal="true" aria-label="Reserva" data-theme="dark">
-  <div class="ob-scrim" data-ob-close></div>
-  <div class="ob-inner">
-    <aside class="ob-aside">
-      <div class="oa-photo"><img id="oaPhoto" src="assets/hero-main.jpg" alt=""></div>
-      <div>
-        <span class="ob-brand"><img class="iky-logo-w" src="assets/logo-iky-wordmark.png" alt="IKY Motion Hub"></span>
-        <div class="oa-head">
-          <h3 data-en="Reserve your place at the Hub">Reserva tu lugar en el Hub</h3>
-          <p class="oa-sub" data-en="Tell us a little about you and we continue on WhatsApp to schedule your first session.">Cuéntanos un poco sobre ti y seguimos por WhatsApp para agendar tu primera sesión.</p>
-        </div>
-      </div>
-      <div class="oa-steps" id="oaSteps">
-        <div class="oa-step" data-s="1"><span class="dot">1</span><span class="lbl" data-en="Your practice">Tu práctica</span></div>
-        <div class="oa-step" data-s="2"><span class="dot">2</span><span class="lbl" data-en="Your goal">Tu objetivo</span></div>
-        <div class="oa-step" data-s="3"><span class="dot">3</span><span class="lbl" data-en="Your details">Tus datos</span></div>
-      </div>
-      <div class="oa-trust">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg>
-        <span data-en="No online payments. We coordinate everything with you on WhatsApp.">Sin pagos online. Coordinamos todo contigo por WhatsApp.</span>
-      </div>
-    </aside>
-
-    <div class="ob-main">
-      <button class="ob-close" data-ob-close aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-      <div class="ob-progress" aria-hidden="true"><span id="obBar"></span></div>
-
-      <!-- STEP 1 · PRÁCTICA -->
-      <section class="ob-step" data-step="1">
-        <div class="ob-kick" data-en="Step 1 of 3 · Your practice">Paso 1 de 3 · Tu práctica</div>
-        <h2 class="ob-h" data-en="What would you like to transform?">¿Qué te gustaría transformar?</h2>
-        <p class="ob-p" data-en="No wrong choice. Pick the practice that calls to you today and we will guide you to the rest.">No hay elección incorrecta. Marca la práctica que hoy te llama y nosotros te guiamos hacia el resto.</p>
-        <div class="ob-choices" id="obPractice">
-          <button type="button" class="ob-choice" data-val="Pilates"><span class="cradio"></span><span class="clbl"><span class="cnm">Pilates</span><span class="cds" data-en="Semi-personalized · functional strength">Semipersonalizado · fuerza funcional</span></span></button>
-          <button type="button" class="ob-choice" data-val="Método Feldenkrais"><span class="cradio"></span><span class="clbl"><span class="cnm">Método Feldenkrais®</span><span class="cds" data-en="Release pain · re-learn movement">Liberar dolor · reaprender el movimiento</span></span></button>
-          <button type="button" class="ob-choice" data-val="Ishka Kankueb Yoga"><span class="cradio"></span><span class="clbl"><span class="cnm">Ishka Kankueb Yoga</span><span class="cds" data-en="Technical, conscious, non-religious">Técnico, consciente, no religioso</span></span></button>
-          <button type="button" class="ob-choice" data-val="IKY Breathwork"><span class="cradio"></span><span class="clbl"><span class="cnm">IKY Breathwork</span><span class="cds" data-en="Master your breathing">Domina tu respiración</span></span></button>
-          <button type="button" class="ob-choice" data-val="Programa Movefulness"><span class="cradio"></span><span class="clbl"><span class="cnm">Programa Movefulness</span><span class="cds" data-en="Flagship wellbeing program">Programa insignia de bienestar</span></span></button>
-          <button type="button" class="ob-choice" data-val="Aún no lo sé"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="I am not sure yet">Aún no lo sé</span><span class="cds" data-en="Help me choose">Ayúdenme a elegir</span></span></button>
-        </div>
-        <div class="ob-nav">
-          <span class="grow"></span>
-          <button type="button" class="btn btn-terra" id="obNext1" data-en="Continue">Continuar <span class="arr">→</span></button>
-        </div>
-      </section>
-
-      <!-- STEP 2 · OBJETIVO -->
-      <section class="ob-step" data-step="2">
-        <div class="ob-kick" data-en="Step 2 of 3 · Your goal">Paso 2 de 3 · Tu objetivo</div>
-        <h2 class="ob-h" data-en="What do you want to achieve?">¿Qué quieres lograr con tu cuerpo?</h2>
-        <p class="ob-p" data-en="Tell us your goal and your starting point — we will tailor your first session to you.">Cuéntanos tu meta y tu punto de partida: así preparamos tu primera sesión a tu medida.</p>
-        <div class="ob-qlabel" data-en="Main goal">Objetivo principal</div>
-        <div class="ob-choices" id="obGoal">
-          <button type="button" class="ob-choice" data-val="Reducir dolor"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Reduce pain">Reducir dolor</span></span></button>
-          <button type="button" class="ob-choice" data-val="Movilidad y fuerza"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Mobility &amp; strength">Movilidad y fuerza</span></span></button>
-          <button type="button" class="ob-choice" data-val="Calma y manejo del estrés"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Calm &amp; stress relief">Calma y estrés</span></span></button>
-          <button type="button" class="ob-choice" data-val="Rendimiento deportivo"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Athletic performance">Rendimiento deportivo</span></span></button>
-          <button type="button" class="ob-choice" data-val="Bienestar general"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Overall wellbeing">Bienestar general</span></span></button>
-          <button type="button" class="ob-choice" data-val="Recuperación de lesión"><span class="cradio"></span><span class="clbl"><span class="cnm" data-en="Injury recovery">Recuperación de lesión</span></span></button>
-        </div>
-        <div class="ob-qlabel" data-en="Your experience">Tu experiencia</div>
-        <div class="ob-pills" id="obExp">
-          <button type="button" class="ob-pill" data-val="Primera vez" data-en="First time">Primera vez</button>
-          <button type="button" class="ob-pill sel" data-val="Algo de experiencia" data-en="Some experience">Algo de experiencia</button>
-          <button type="button" class="ob-pill" data-val="Practico regularmente" data-en="I practice regularly">Practico regularmente</button>
-        </div>
-        <div class="ob-nav">
-          <button type="button" class="ob-back" data-back><span data-en="Back">← Atrás</span></button>
-          <span class="grow"></span>
-          <button type="button" class="btn btn-terra" id="obNext2" data-en="Continue">Continuar <span class="arr">→</span></button>
-        </div>
-      </section>
-
-      <!-- STEP 3 · DATOS -->
-      <section class="ob-step" data-step="3">
-        <div class="ob-kick" data-en="Step 3 of 3 · Your details">Paso 3 de 3 · Tus datos</div>
-        <h2 class="ob-h" data-en="You are one step away.">Estás a un paso.</h2>
-        <p class="ob-p" data-en="Leave your details and in minutes we will write to you on WhatsApp to schedule — no queues, no waiting.">Déjanos tus datos y en minutos te escribimos por WhatsApp para agendar — sin filas ni esperas.</p>
-        <div class="ob-form">
-          <div class="ob-field full"><label data-en="Full name">Nombres y apellidos</label><input class="ob-input" id="fNombre" type="text" placeholder="" autocomplete="name"></div>
-          <div class="ob-field full"><label data-en="Mobile / WhatsApp">Celular / WhatsApp</label><div class="ob-tel"><select class="ob-input ob-cc" id="fCc" aria-label="Indicativo"><option value="+57" selected>🇨🇴 +57</option><option value="+52">🇲🇽 +52</option><option value="+51">🇵🇪 +51</option><option value="+593">🇪🇨 +593</option><option value="+56">🇨🇱 +56</option><option value="+54">🇦🇷 +54</option><option value="+58">🇻🇪 +58</option><option value="+507">🇵🇦 +507</option><option value="+506">🇨🇷 +506</option><option value="+502">🇬🇹 +502</option><option value="+34">🇪🇸 +34</option><option value="+1">🇺🇸 +1</option><option value="+55">🇧🇷 +55</option></select><input class="ob-input" id="fTel" type="tel" placeholder="300 000 0000" autocomplete="tel"></div></div>
-          <div class="ob-field full"><label data-en="Email">Correo electrónico</label><input class="ob-input" id="fEmail" type="email" placeholder="" autocomplete="email"></div>
-        </div>
-        <div class="ob-nav">
-          <button type="button" class="ob-back" data-back><span data-en="Back">← Atrás</span></button>
-          <span class="grow"></span>
-          <button type="button" class="btn btn-wa" id="obSend"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg> <span data-en="Send & continue on WhatsApp">Enviar y continuar por WhatsApp</span></button>
-        </div>
-        <p class="ob-note" data-en="When you send, we open WhatsApp with your info so we can coordinate your booking.">Al enviar, abriremos WhatsApp con tu información para coordinar tu reserva.</p>
-      </section>
-
-      <!-- STEP 4 · ÉXITO -->
-      <section class="ob-step" data-step="4">
-        <div class="ob-success">
-          <div class="ob-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <h2 class="ob-h" data-en="Thank you!">¡Gracias!</h2>
-          <p class="ob-p" style="margin:0 auto" data-en="We received your info. Continue on WhatsApp to finish scheduling your session.">Recibimos tu información. Continúa por WhatsApp para terminar de agendar tu sesión.</p>
-          <div class="rc" id="obReceipt"></div>
-          <div class="hero-cta" style="justify-content:center">
-            <a class="btn btn-wa" id="obWa" target="_blank" rel="noopener" href="https://wa.me/573153161875"><svg class="wa-ico" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z"/></svg> <span data-en="Continue on WhatsApp">Continuar por WhatsApp</span></a>
-            <button type="button" class="btn btn-ghost" data-ob-close data-en="Done">Listo</button>
-          </div>
-        </div>
-      </section>
-
 <script src="app.js"></script>
 </body>
 </html>
-
-
