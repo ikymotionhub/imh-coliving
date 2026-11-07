@@ -16,10 +16,10 @@ function openWA(message){ window.open(waLink(message), "_blank", "noopener"); }
    ============================================================ */
 const GALLERIES = {
   herobg:    { label:"Fachada IMH Coliving", images:[
-    "assets/facade/fachada.jpg","assets/facade/entrada.jpg","assets/facade/casa-frontal.jpg"] },
+    "assets/facade/fachada.jpg","assets/facade/entrada.jpg","assets/facade/sendero.jpg"] },
   hero:      { label:"Fachada colonial", images:[
     "assets/hero/fachada-1.jpg","assets/hero/fachada-2.jpg","assets/hero/fachada-4.jpg",
-    "assets/hero/fachada-6.jpg","assets/hero/cali-tertulia-night.jpg"] },
+    "assets/hero/fachada-5.jpg","assets/hero/fachada-6.jpg","assets/hero/fachada-3.jpg"] },
   santarita: { label:"Habitación Santa Rita", images:[
     "assets/rooms/santarita-1.jpg","assets/rooms/santarita-2.jpg","assets/rooms/santarita-3.jpg",
     "assets/rooms/santarita-4.jpg","assets/rooms/santarita-5.jpg","assets/rooms/santarita-6.jpg"] },
@@ -59,10 +59,6 @@ const GALLERIES = {
 /* Slider de fachada del hero (deslizamiento moderno y minimalista) */
 const HERO_SLIDES = [
   "assets/facade/casa-frontal.jpg",
-  "assets/hero/fachada-1.jpg",
-  "assets/facade/casa-frontal2.jpg",
-  "assets/hero/fachada-2.jpg",
-  "assets/hero/fachada-4.jpg"
 ];
 
 /* "Ubicados en el mejor sector de Cali" — ventajas de la ubicación */
@@ -426,61 +422,6 @@ function initLegal(){
 }
 
 /* ============================================================
-   GOOGLE MAPS REVIEWS (Sincronización & Caché cada 2-3 días)
-   ============================================================ */
-const REVIEWS_SYNC_INTERVAL = 3 * 24 * 60 * 60 * 1000; // 3 días
-
-function initGoogleReviews(){
-  const grid = document.getElementById("reviews-grid");
-  if(!grid) return;
-
-  const defaultReviews = [
-    { author:"María F.", avatar:"M", rating:5, date:"Hace 2 días", platform:"Google Maps", text:"Excelente ubicación en Santa Rita, muy tranquilo y cerca de todo. La atención de la casa es espectacular y el ambiente súper acogedor. ¡Volvería sin pensarlo!" },
-    { author:"Daniel R.", avatar:"D", rating:5, date:"Hace 4 días", platform:"Google Maps", text:"El ambiente para trabajar remoto es increíble. Wi-Fi súper estable en todos los rincones y espacios tranquilos para concentrarse. Perfecto para nómadas." },
-    { author:"Sophie L.", avatar:"S", rating:5, date:"Hace 1 semana", platform:"Google Maps", text:"La casa neocolonial es hermosa y muy fresca. Las clases de yoga y bienestar en la mañana fueron un plus inesperado. Una experiencia súper completa en Cali." }
-  ];
-
-  const render = (list)=>{
-    grid.innerHTML = list.slice(0,3).map((r,i)=>`
-      <article class="rev-card">
-        <div class="rev-stars">★★★★★</div>
-        <p class="rev-text">"${r.text}"</p>
-        <div class="rev-who">
-          <span class="rev-av">${r.avatar || r.author.charAt(0)}</span>
-          <div>
-            <b>${r.author}</b>
-            <small>${r.date} · <span style="color:#4285F4;font-weight:700">${r.platform || 'Google Maps'}</span></small>
-          </div>
-        </div>
-      </article>`).join("");
-  };
-
-  render(defaultReviews);
-
-  const lastSync = parseInt(localStorage.getItem("imh_reviews_last_sync") || "0", 10);
-  const now = Date.now();
-  const cachedData = localStorage.getItem("imh_reviews_data");
-
-  if(cachedData && (now - lastSync < REVIEWS_SYNC_INTERVAL)){
-    try {
-      const parsed = JSON.parse(cachedData);
-      if(parsed.reviews && parsed.reviews.length) render(parsed.reviews);
-    } catch(e){}
-  } else {
-    fetch("reviews.json?t=" + now)
-      .then(res => res.json())
-      .then(data => {
-        if(data && data.reviews && data.reviews.length){
-          localStorage.setItem("imh_reviews_data", JSON.stringify(data));
-          localStorage.setItem("imh_reviews_last_sync", now.toString());
-          render(data.reviews);
-        }
-      })
-      .catch(() => {});
-  }
-}
-
-/* ============================================================
    INIT
    ============================================================ */
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -493,7 +434,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   buildLightbox();
   initSwipeHints();
   initFaq();
-  initGoogleReviews();
   initCookies();
   initLegal();
 
@@ -547,187 +487,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
   /* year */
   const y=document.getElementById("year"); if(y) y.textContent=new Date().getFullYear();
 });
-/* ===== ONBOARDING / RESERVA — captura de datos → N8N + WhatsApp ===== */
-(function(){
-  var ob=document.getElementById('ob');
-  if(!ob) return;
-  function isEn(){return document.documentElement.lang==='en';}
-  function t(es,en){return isEn()?en:es;}
-
-  var PRACTICE_KEYS={
-    'Pilates':'Pilates',
-    'Método Feldenkrais':'Método Feldenkrais',
-    'Ishka Kankueb Yoga':'Ishka Kankueb Yoga',
-    'IKY Breathwork':'IKY Breathwork',
-    'Programa Movefulness':'Programa Movefulness'
-  };
-  var state={practice:'',goal:'',exp:'Algo de experiencia',horario:'',frecuencia:''};
-
-  // foto por servicio en el aside (interactivo)
-  var oaPhoto=document.getElementById('oaPhoto');
-  var OA_PHOTO={
-    'Pilates':'assets/pilates-brand.jpg',
-    'Método Feldenkrais':'assets/feldenkrais-brand.jpg',
-    'Ishka Kankueb Yoga':'assets/yoga-brand.jpg',
-    'IKY Breathwork':'assets/breathwork-brand.jpg',
-    'Programa Movefulness':'assets/amb-bowls.jpg'
-  };
-  var OA_ROTATE=['assets/pilates-brand.jpg','assets/yoga-brand.jpg','assets/breathwork-brand.jpg','assets/feldenkrais-brand.jpg','assets/amb-bowls.jpg'];
-  var rotTimer=null,rotIdx=0;
-  function setPhoto(src){
-    if(!oaPhoto||!src||oaPhoto.getAttribute('src')===src) return;
-    oaPhoto.style.opacity=0;
-    setTimeout(function(){oaPhoto.src=src;oaPhoto.style.opacity='';},260);
-  }
-  function stopRotate(){ if(rotTimer){clearInterval(rotTimer);rotTimer=null;} }
-  function startRotate(){
-    stopRotate();
-    if(state.practice) return;
-    rotIdx=0;
-    rotTimer=setInterval(function(){ if(state.practice||current!==1){stopRotate();return;} rotIdx=(rotIdx+1)%OA_ROTATE.length; setPhoto(OA_ROTATE[rotIdx]); },3200);
-  }
-
-  var stepsEl=ob.querySelectorAll('.ob-step');
-  var railEl=ob.querySelectorAll('#oaSteps .oa-step');
-  var current=1;
-  function goStep(n){
-    current=n;
-    var bar=document.getElementById('obBar'); if(bar) bar.style.width=Math.min(100,n*(100/3))+'%';
-    if(n!==1) stopRotate();
-    stepsEl.forEach(function(s){s.classList.toggle('show',+s.dataset.step===n);});
-    railEl.forEach(function(r){
-      var d=+r.dataset.s; r.classList.remove('active','done');
-      var eff=(n===4)?4:n;
-      if(d<eff) r.classList.add('done'); else if(d===eff) r.classList.add('active');
-    });
-    var main=ob.querySelector('.ob-main'); if(main) main.scrollTop=0;
-  }
-
-  function selectIn(sel,val){
-    ob.querySelectorAll(sel+' .ob-choice').forEach(function(b){b.classList.toggle('sel',b.dataset.val===val);});
-  }
-  function open(opts){
-    opts=opts||{};
-    if(opts.practice && PRACTICE_KEYS[opts.practice]){
-      state.practice=PRACTICE_KEYS[opts.practice];
-      selectIn('#obPractice',state.practice);
-    } else {
-      state.practice='';
-      ob.querySelectorAll('#obPractice .ob-choice').forEach(function(p){p.classList.remove('sel');});
-    }
-    goStep(1);
-    ob.classList.add('open');
-    document.body.style.overflow='hidden';
-    ob.setAttribute('aria-hidden','false');
-    if(state.practice) setPhoto(OA_PHOTO[state.practice]); else startRotate();
-  }
-  function close(){
-    ob.classList.remove('open');
-    document.body.style.overflow='';
-    ob.setAttribute('aria-hidden','true');
-    stopRotate();
-  }
-  window.__ikyBook=open;
-
-  ob.querySelectorAll('#obPractice .ob-choice').forEach(function(b){
-    b.addEventListener('click',function(){state.practice=b.dataset.val;selectIn('#obPractice',state.practice);stopRotate();setPhoto(OA_PHOTO[state.practice]);});
-  });
-  ob.querySelectorAll('#obGoal .ob-choice').forEach(function(b){
-    b.addEventListener('click',function(){state.goal=b.dataset.val;selectIn('#obGoal',state.goal);});
-  });
-  ob.querySelectorAll('#obExp .ob-pill').forEach(function(b){
-    b.addEventListener('click',function(){
-      state.exp=b.dataset.val;
-      ob.querySelectorAll('#obExp .ob-pill').forEach(function(x){x.classList.toggle('sel',x===b);});
-    });
-  });
-  ob.querySelectorAll('#obHorario .ob-pill').forEach(function(b){
-    b.addEventListener('click',function(){state.horario=b.dataset.val;ob.querySelectorAll('#obHorario .ob-pill').forEach(function(x){x.classList.toggle('sel',x===b);});});
-  });
-  ob.querySelectorAll('#obFrecuencia .ob-pill').forEach(function(b){
-    b.addEventListener('click',function(){state.frecuencia=b.dataset.val;ob.querySelectorAll('#obFrecuencia .ob-pill').forEach(function(x){x.classList.toggle('sel',x===b);});});
-  });
-
-  function markErr(el,bad){el.classList.toggle('err',bad);return !bad;}
-  function validEmail(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);}
-
-  document.getElementById('obNext1').addEventListener('click',function(){goStep(2);});
-  document.getElementById('obNext2').addEventListener('click',function(){goStep(3);});
-
-  ob.querySelectorAll('[data-back]').forEach(function(b){
-    b.addEventListener('click',function(){ if(current>1) goStep(current-1); });
-  });
-  ob.querySelectorAll('[data-ob-close]').forEach(function(b){b.addEventListener('click',close);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&ob.classList.contains('open'))close();});
-
-  function buildWaMessage(d){
-    var nom=(d.nombre+' '+d.apellido).trim()||'—';
-    var lines=[
-      t('✨ *Nueva solicitud · IKY Motion Hub*','✨ *New request · IKY Motion Hub*'),
-      '──────────────',
-      '👤 '+t('Nombre','Name')+': '+nom,
-      '🎯 '+t('Me interesa','Interested in')+': '+(d.practica||'—'),
-      '💪 '+t('Objetivo','Goal')+': '+(d.objetivo||'—'),
-      '📊 '+t('Experiencia','Experience')+': '+(d.experiencia||'—'),
-      '🕒 '+t('Horario','Preferred time')+': '+(d.horario||'—'),
-      '📆 '+t('Frecuencia','Frequency')+': '+(d.frecuencia||'—')
-    ];
-    if(d.telefono) lines.push('📱 WhatsApp: '+d.telefono);
-    if(d.email) lines.push('📧 '+t('Correo','Email')+': '+d.email);
-    if(d.mensaje) lines.push('📝 '+t('Nota','Note')+': '+d.mensaje);
-    lines.push('──────────────');
-    lines.push(t('🙌 ¡Quiero reservar mi lugar en el Hub!','🙌 I want to book my place at the Hub!'));
-    return lines.join('\n');
-  }
-  function sendToN8N(d){
-    if(typeof IKY_N8N_WEBHOOK==='undefined' || !IKY_N8N_WEBHOOK) return;
-    try{
-      var body=JSON.stringify(d);
-      if(navigator.sendBeacon){navigator.sendBeacon(IKY_N8N_WEBHOOK,new Blob([body],{type:'application/json'}));}
-      else{fetch(IKY_N8N_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true,mode:'cors'}).catch(function(){});}
-    }catch(e){}
-  }
-  function renderReceipt(d){
-    var rows='';
-    rows+='<div class="pay-row"><span>'+t('Me interesa','Interested in')+'</span><span class="v">'+(d.practica||'—')+'</span></div>';
-    rows+='<div class="pay-row"><span>'+t('Objetivo','Goal')+'</span><span class="v">'+(d.objetivo||'—')+'</span></div>';
-    var nom=(d.nombre+' '+d.apellido).trim();
-    if(nom)rows+='<div class="pay-row"><span>'+t('Nombre','Name')+'</span><span class="v">'+nom+'</span></div>';
-    document.getElementById('obReceipt').innerHTML=rows;
-  }
-
-  document.getElementById('obSend').addEventListener('click',function(){
-    var n=document.getElementById('fNombre'),tel=document.getElementById('fTel'),em=document.getElementById('fEmail');
-    var ccEl=document.getElementById('fCc'); var cc=ccEl?ccEl.value:''; var telNum=tel.value.trim();
-    var d={
-      nombre:n.value.trim(),
-      apellido:'',
-      telefono:telNum?((cc?cc+' ':'')+telNum):'',
-      indicativo:cc,
-      email:em.value.trim(),
-      practica:state.practice||t('Aún no lo sé','Not sure yet'),
-      objetivo:state.goal||'',
-      experiencia:state.exp||'',
-      horario:state.horario||'',
-      frecuencia:state.frecuencia||'',
-      mensaje:'',
-      idioma:document.documentElement.lang||'es',
-      origen:'ikymotionhub.com',
-      fecha:new Date().toISOString()
-    };
-    sendToN8N(d);
-    var num=(typeof IKY_WA_NUMBER!=='undefined'&&IKY_WA_NUMBER)?IKY_WA_NUMBER:'573153161875';
-    var wa='https://wa.me/'+num+'?text='+encodeURIComponent(buildWaMessage(d));
-    document.getElementById('obWa').href=wa;
-    renderReceipt(d);
-    goStep(4);
-    window.open(wa,'_blank');
-  });
-
-  document.querySelectorAll('.js-book').forEach(function(b){
-    b.addEventListener('click',function(e){
-      e.preventDefault();
-      open({practice:b.dataset.practice});
-    });
-  });
-})();
